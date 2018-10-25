@@ -95,6 +95,12 @@ if(err) throw err
 Screenshot
    
    <img src="https://github.com/contentstack/contentstack-js-sync-playground/blob/master/images/Screenshot_pagination.png"  height="500" width="1000">
+   
+   
+   
+   <img src="https://github.com/contentstack/contentstack-js-sync-playground/blob/master/images/Screenshot_sync.png"  height="500" width="1000">
+   
+   
 
 
 #### More Resources
