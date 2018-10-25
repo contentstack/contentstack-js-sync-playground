@@ -94,7 +94,7 @@ if(err) throw err
 
 Screenshot
    
-   <img src="https://github.com/contentstack/contentstack-android-sync-playground/blob/master/app/src/main/assets/screenshot/subsquesnt.png"  height="500" width="300">
+   <img src="https://github.com/contentstack/contentstack-js-sync-playground/blob/master/images/Screenshot_pagination.png"  height="500" width="300">
 
 
 #### More Resources
