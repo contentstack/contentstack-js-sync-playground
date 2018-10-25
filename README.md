@@ -79,8 +79,6 @@ data.then(function(result,  err) {
 if(err) throw err
 })
 
-![alt text](https://github.com/contentstack/contentstack-js-sync-playground.git)>
-
 <img src="https://github.com/contentstack/contentstack-js-sync-playground/tree/master/images/Screenshot_pagination.png" height="500" width="300">
 
 <img src="https://github.com/contentstack/contentstack-js-sync-playground/tree/master/images/Screenshot_sync.png" height="500" width="300">
