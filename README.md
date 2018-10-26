@@ -1,7 +1,7 @@
 
 ## Build a playground app using Sync API with Contentstack’s JavaScript (Browser) SDK
 
-This is a demo playground app built using Contentstack’s iOS SDK and Sync API. You can try out and play with our Sync API with this example app, before building bigger and better applications.
+This is a demo playground app built using Contentstack’s JavaScript SDK and Sync API. You can try out and play with our Sync API with this example app, before building bigger and better applications.
 
 ### Prerequisites
 - [Contentstack account](https://app.contentstack.com/)
