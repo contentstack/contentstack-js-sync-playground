@@ -4,8 +4,8 @@
 This is a demo playground app built using Contentstack’s iOS SDK and Sync API. You can try out and play with our Sync API with this example app, before building bigger and better applications.
 
 ### Prerequisites
-[Contentstack account](https://app.contentstack.com/)
-[Basic knowledge of Contentstack](https://www.contentstack.com/docs/)
+- [Contentstack account](https://app.contentstack.com/)
+- [Basic knowledge of Contentstack](https://www.contentstack.com/docs/)
 
 
 ####  Step 1: Create a stack
@@ -28,14 +28,15 @@ Now that the content type is ready, let’s add some content for your Sync Playg
 
 Now that we have created the sample data, it’s time to use and configure the presentation layer.
 
+#### Step 5: Set up and initialize JavaScript (browser) SDK
+To set up and initialize Contentstack’s JavaScript (browser) SDK, refer to our [documentation here](https://www.contentstack.com/docs/platforms/javascript-browser).
 
-
-####  Step 5: Clone and configure the application
+####  Step 6: Clone and configure the application
 To get your app up and running quickly, we have created a sample playground app. Clone the Github repo given below and change the configuration as per your need:
 
 $ git clone [https://github.com/contentstack/contentstack-js-sync-playground.git](https://github.com/contentstack/contentstack-js-sync-playground.git)
 
-Now add your Contentstack API Key, Delivery Token, and Environment within the custom.min.js file under the scripts folder of the web app during the SDK initialization step. (Find your [Stack's API Key and Delivery Token](https://www.contentstack.com/docs/apis/content-delivery-api/#authentication).)
+Now add your Contentstack API Key, Delivery Token, and Environment within the custom.min.js file under the scripts folder of the web app during the SDK initialization step. (Find your [Stack's API Key](https://www.contentstack.com/docs/guide/stack#edit-a-stack) and [Delivery Token](https://www.contentstack.com/docs/guide/tokens#create-a-delivery-token).)
 
 ```
 Stack = Contentstack.Stack({
@@ -46,7 +47,7 @@ Stack = Contentstack.Stack({
 ```
 
 This will initiate your project.
-### Step 6: Initialize sync 
+### Step 7: Initialize sync 
 To perform initial sync, use the sync method, which fetches all the content of the specified environment. 
 
 ```
@@ -59,12 +60,11 @@ data.then(function(sync_data,  err) {
 if(err)throw err
 })
 ```
-Screenshot
-   
-   <img src="https://github.com/contentstack/contentstack-js-sync-playground/blob/master/images/screenshot_pagination.png"  height="500" width="1000">
 
-On successful sync completion, you will get a sync token in response, which you need to use to get subsequent (delta) syncs.
-#### Step 7: Use pagination token
+   
+
+On successful sync completion, you will get a sync token in response, which you need to use to get subsequent (delta) syncs. If the result has more than 100 records, it will return a pagination token. 
+#### Step 8: Use pagination token
 If the result of the initial sync contains more than 100 records, the response would be paginated. In that case, it returns the first batch of data and a pagination token. You can use this token to get the next batch of data.
 
 
@@ -79,28 +79,16 @@ data.then(function(result,  err) {
 })
 
 ```
-Screenshot 
 
-   <img src="https://github.com/contentstack/contentstack-js-sync-playground/blob/master/images/screenshot_sync.png"  height="500" width="1000">
+  <img src="https://github.com/contentstack/contentstack-js-sync-playground/blob/master/images/screenshot_pagination.png"  height="500" width="1000">
 
 
-####  Step 8: Publish new entries
+
+####  Step 9: Publish new entries
 In order to understand how you can also fetch only new (incremental) updates that were done since the last sync, you should create more entries and publish them. You can then use the Subsequent Sync call given below to see how it works.
-Step 10: Perform subsequent sync 
-In the response of the initial sync, you get a sync token. This token is used to fetch incremental updates, i.e., only the changes made after the initial sync. 
 
-```
-let data = Stack.sync({"sync_token" : "<sync_token>"})
-data.then(function(result,  err) {
-     //error for any error description
-     //result.items: contains sync data
-     //result.paginationToken: For fetching the next batch of  entries using pagination token.
-     //result.syncToken: For performing subsequent sync after initial sync.       
-if(err) throw err
-})
-```
 
-#### Step 9: Perform subsequent sync 
+#### Step 10: Perform subsequent sync 
 In the response of the initial sync, you get a sync token. This token is used to fetch incremental updates, i.e., only the changes made after the initial sync. 
 
 ```
@@ -115,9 +103,6 @@ if(err) throw err
 ```
 
 
-   
-   
-SubsequentSync Screenshot 
    
    <img src="https://github.com/contentstack/contentstack-js-sync-playground/blob/master/images/screenshot_sync.png"  height="500" width="1000">
    
