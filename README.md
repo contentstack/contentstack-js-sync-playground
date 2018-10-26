@@ -47,7 +47,7 @@ Stack = Contentstack.Stack({
 ```
 
 This will initiate your project.
-### Step 7: Initialize sync 
+#### Step 7: Initialize sync 
 To perform initial sync, use the sync method, which fetches all the content of the specified environment. 
 
 ```
